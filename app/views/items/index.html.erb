@@ -1,0 +1,61 @@
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-pills">
+    <li class="active"><a href="#tab1" data-toggle="tab">自行车</a></li>
+    <li><a href="#tab2" data-toggle="tab">电脑</a></li>
+	<li><a href="#tab3" data-toggle="tab">手机</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+		
+
+		
+		<ul class="thumbnails">
+		  <% @items.each do |item| %>
+		  <li class="span3">
+		    <div class="thumbnail">
+			  <%= link_to image_tag("http://placehold.it/260x180"), item_path(item) %>
+              <h5><%= item.price %></h5>
+		    </div>
+		  </li>
+		  <% end %>
+		  
+		</ul>
+		
+	  <table>
+	    <tr>
+	      <th>Title</th>
+	      <th>Image url</th>
+	      <th>Price</th>
+	      <th></th>
+	      <th></th>
+	      <th></th>
+	    </tr>
+
+	  <% @items.each do |item| %>
+	    <tr>
+	      <td><%= item.title %></td>
+	      <td><%= item.image_url %></td>
+	      <td><%= item.price %></td>
+	      <td><%= link_to 'Show', item %></td>
+	      <td><%= link_to 'Edit', edit_item_path(item) %></td>
+	      <td><%= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>
+	    </tr>
+	  <% end %>
+	  </table>
+
+	  <br />
+
+	  <%= link_to 'New Item', new_item_path %>
+      
+    </div>
+    <div class="tab-pane" id="tab2">
+      <p>Howdy, I'm in Section 2.</p>
+    </div>
+    <div class="tab-pane" id="tab3">
+      <p>Howdy, I'm in Section 3.</p>
+    </div>
+	
+  </div>
+</div>
+
