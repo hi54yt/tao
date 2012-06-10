@@ -4,7 +4,7 @@ set :application, "tao"
 set :domain, "118.145.12.5"
 
 #file path
-set :repository,  "git@github.com:hi54yt/tao.git"
+set :repository,  "ssh://git@github.com/hi54yt/tao.git"
 set :deploy_to, "~/tao"
 
 role :web, "118.145.12.5"                          # Your HTTP server, Apache/etc
