@@ -4,15 +4,20 @@
 </p>
 
 <p>
-  <b>Image url:</b>
-  <%= @item.image_url %>
-</p>
-
-<p>
   <b>Price:</b>
   <%= @item.price %>
 </p>
 
 
+
+<% if @item.excerpt_image %>
+<p>
+  <%= image_tag(@item.excerpt_image.url(:medium)) %>
+</p>
+<% end %>
+
+
+<% if current_user && @item.user == current_user %>
 <%= link_to 'Edit', edit_item_path(@item) %> |
+<%end%>
 <%= link_to 'Back', items_path %>

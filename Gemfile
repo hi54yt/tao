@@ -26,7 +26,9 @@ gem 'jquery-rails'
 
 gem 'capistrano'
 gem 'capistrano-ext'
-
+gem 'rails-i18n'
+gem "devise"
+gem "paperclip"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

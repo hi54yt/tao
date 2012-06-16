@@ -13,16 +13,32 @@
 		<ul class="thumbnails">
 		  <% @items.each do |item| %>
 		  <li class="span3">
-		    <div class="thumbnail">
-			  <%= link_to image_tag("http://placehold.it/260x180"), item_path(item) %>
-              <h5><%= item.price %></h5>
-		    </div>
+		    <!-- <div class="thumbnail">
+			  <%= link_to image_tag(item.excerpt_image.url(:thumb)), item_path(item) %>
+              <h5><%= number_to_currency(item.price, :locale => 'zh-CN') %></h5>
+			  <% if current_user && item.user == current_user %>
+			  <%= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %>
+			  <% end %>
+		    </div> -->
+		    <a href="<%= item_path(item) %>" class="thumbnail">
+			  <%= image_tag(item.excerpt_image.url(:thumb)) %>
+		    </a>
+			
 		  </li>
 		  <% end %>
 		  
 		</ul>
 		
-	  <table>
+		<!-- <ul class="thumbnails">
+		  <li class="span3">
+		    <a href="#" class="thumbnail">
+		      <img src="http://placehold.it/260x180" alt="">
+		    </a>
+		  </li>
+		  ...
+		</ul> -->
+		
+	  <!-- <table>
 	    <tr>
 	      <th>Title</th>
 	      <th>Image url</th>
@@ -33,20 +49,20 @@
 	    </tr>
 
 	  <% @items.each do |item| %>
-	    <tr>
-	      <td><%= item.title %></td>
-	      <td><%= item.image_url %></td>
-	      <td><%= item.price %></td>
-	      <td><%= link_to 'Show', item %></td>
-	      <td><%= link_to 'Edit', edit_item_path(item) %></td>
-	      <td><%= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>
-	    </tr>
-	  <% end %>
-	  </table>
+	 	    <tr>
+	 	      <td><%= item.title %></td>
+	 	      <td><%= item.image_url %></td>
+	 	      <td><%= item.price %></td>
+	 	      <td><%= link_to 'Show', item %></td>
+	 	      <td><%= link_to 'Edit', edit_item_path(item) %></td>
+	 	      <td><%= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>
+	 	    </tr>
+	 	  <% end %>
+	  </table> -->
 
 	  <br />
 
-	  <%= link_to 'New Item', new_item_path %>
+
       
     </div>
     <div class="tab-pane" id="tab2">

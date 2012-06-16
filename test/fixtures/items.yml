@@ -2,10 +2,10 @@
 
 one:
   title: MyString
-  image_url: MyString
+  image_url: MyString.jpg
   price: 9.99
 
 two:
-  title: MyString
-  image_url: MyString
+  title: MyString4
+  image_url: MyString.jpg
   price: 9.99

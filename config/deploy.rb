@@ -18,6 +18,7 @@ set :scm_verbose, true
 set :use_sudo, false
 set :deploy_env, "development"
 set :rails_env, "development"
+set :normalize_asset_timestamps, false
 
 namespace :deploy do
   desc "cause Passenger to initiate a restart"
@@ -31,11 +32,11 @@ namespace :deploy do
   end
 end
 
-after "deploy:update_code", :bundle_install
-desc "install the necessary prerequisites"
-  task :bundle_install, :roles => :app do
-    run "cd #{release_path} && bundle install"
-  end
+# after "deploy:update_code", :bundle_install
+# desc "install the necessary prerequisites"
+#   task :bundle_install, :roles => :app do
+#     run "cd #{release_path} && bundle install"
+#   end
 
 
 # if you want to clean up old releases on each deploy uncomment this:
