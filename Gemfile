@@ -29,6 +29,8 @@ gem 'capistrano-ext'
 gem 'rails-i18n'
 gem "devise"
 gem "paperclip"
+gem "renren", "~> 0.0.13"
+gem 'omniauth-twitter', :git => 'https://github.com/arunagw/omniauth-twitter.git'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
