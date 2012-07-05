@@ -6,6 +6,7 @@ group :assets do
   gem 'twitter-bootstrap-rails'
 end
 gem 'rails', '3.2.3'
+gem 'devise'
 gem 'sqlite3'
 gem 'jquery-rails'
 gem 'capistrano'
