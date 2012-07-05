@@ -1,0 +1,4 @@
+if [ -f "$/users/bestyt/.rvm/scripts/rvm" ] && [ -f ".rvmrc" ]; then
+  source "$/users/bestyt/.rvm/scripts/rvm"
+  source ".rvmrc"
+fi

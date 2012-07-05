@@ -25,7 +25,12 @@
  
       <!-- Be sure to leave the brand out there if you want it shown -->
       <a class="brand" href="<%= items_path %>">Project name</a>
-      <%= link_to "Sing in with twitter", "/auth/twitter" %> 
+	  <% if current_user %>
+	    Signed in as <%= current_user.name %>!
+	    <%= link_to "Sign out", signout_path %>
+	  <% else %>
+	    <%= link_to "Sign in with Renren", "/auth/renren" %>
+	  <% end %> 
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse">
         <!-- .nav, .navbar-search, .navbar-form, etc -->

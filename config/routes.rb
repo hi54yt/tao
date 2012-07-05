@@ -1,8 +1,8 @@
 Tao::Application.routes.draw do
-  devise_for :users
-
   resources :items
-
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
+  match '/auth/:provider/callback' => 'sessions#create'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_filter :authenticate_user! , :except => [ :show, :index ]
+  before_filter :authenticate_user , :except => [ :show, :index ]
   # GET /items
   # GET /items.json
   def index
@@ -35,7 +35,6 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
-    # @item = Item.find(params[:id])
     @item = current_user.items.find(params[:id])
   end
 
@@ -59,7 +58,6 @@ class ItemsController < ApplicationController
   # PUT /items/1
   # PUT /items/1.json
   def update
-    # @item = Item.find(params[:id])
     @item = current_user.items.find(params[:id])
 
     respond_to do |format|
@@ -76,13 +74,18 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
-    # @item = Item.find(params[:id])
     @item = current_user.items.find(params[:id])
     @item.destroy
 
     respond_to do |format|
       format.html { redirect_to items_url }
       format.json { head :no_content }
+    end
+  end
+  
+  def authenticate_user
+    unless User.find_by_id(session[:user_id])
+      redirect_to items_path, :notice => "please log in"
     end
   end
 end
