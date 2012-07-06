@@ -29,6 +29,7 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
+    bcrypt-ruby (3.0.1)
     builder (3.0.0)
     capistrano (2.12.0)
       highline
@@ -47,6 +48,11 @@ GEM
       execjs
     coffee-script-source (1.3.3)
     commonjs (0.2.6)
+    devise (2.1.0)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.0.7)
+      railties (~> 3.1)
+      warden (~> 1.1.1)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -99,6 +105,7 @@ GEM
     omniauth-renren (1.0.0.rc2.1)
       omniauth (~> 1.0.0.rc2)
       omniauth-oauth2 (~> 1.0.0.rc2)
+    orm_adapter (0.0.7)
     paperclip (3.0.4)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -165,6 +172,8 @@ GEM
     uglifier (1.2.4)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    warden (1.1.1)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
@@ -173,6 +182,7 @@ DEPENDENCIES
   capistrano
   capistrano-ext
   coffee-rails (~> 3.2.1)
+  devise
   jquery-rails
   omniauth-renren
   paperclip
